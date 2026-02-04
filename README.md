@@ -22,6 +22,7 @@
      4. [Iniciando um servidor Web](./primeiros-passos-nodejs/4-iniciando-servidor-web/)
      5. [Módulos CommonJS](./primeiros-passos-nodejs/5-modulos-commonjs/)
      6. [NPM](./primeiros-passos-nodejs/6-npm/)
+     7. ECMAScript 2015 - ES6
  
     
 
