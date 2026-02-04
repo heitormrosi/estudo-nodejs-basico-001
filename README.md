@@ -15,6 +15,14 @@
 
 ## Índice
  
+ 1. Primeiros passos com NodeJS
+     1. Introdução
+     2. Instalação
+     3. O que é NodeJS
+     4. [Iniciando um servidor Web](./primeiros-passos-nodejs/4-iniciando-servidor-web/)
+     5. [Módulos CommonJS](./primeiros-passos-nodejs/5-modulos-commonjs/)
+     6. [NPM](./primeiros-passos-nodejs/6-npm/)
+ 
     
 
 [Capa do repositório]: ./docs/capa-repo.jpg
