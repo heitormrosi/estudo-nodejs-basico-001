@@ -26,6 +26,7 @@
      8. [Servidor Web com Express](./primeiros-passos-nodejs/8-servidor-express/)
      9. [Motor de modelos Nunjucks](./primeiros-passos-nodejs/9-motor-nunjucks/)
      10. [Aplicação com MySQL](./primeiros-passos-nodejs/10-aplicacao-mysql/)
+     11. [Integração com MongoDB](./primeiros-passos-nodejs/11-integracao-mongodb/)
  
     
 
