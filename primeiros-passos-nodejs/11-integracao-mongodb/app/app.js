@@ -6,6 +6,11 @@ var logger = require('morgan');
 var nunjucks = require("nunjucks");
 var methodOverride = require("method-override");
 
+const musics = require("./models/musics");
+const mongoose = require("mongoose");
+mongoose.Promise = require("bluebird");
+mongoose.connect("mongodb://localhost/musics");
+
 var indexRouter = require('./routes/musicas');
 
 var app = express();

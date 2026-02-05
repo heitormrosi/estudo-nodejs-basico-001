@@ -1,6 +1,7 @@
 const express = require("express");
-const db = require("../db");
 const router = express.Router();
+
+const mongoose = require("mongoose");
 
 /**
  * Rota GET / estabelece:
@@ -26,7 +27,7 @@ const router = express.Router();
  */
 
 router.get("/", (_, res, next) => {
-    db("musicas").then((musicas) => {
+    mongoose.model("Musica").find().then((musicas) => {
         res.render("index", {
             musicas
         });
@@ -38,16 +39,18 @@ router.get("/add", (_, res) => {
 });
 
 router.post("/", (req, res, next) => {
-    db("musicas").insert(req.body).then((ids) => {
+    const Musica = mongoose.model("Musica");
+    const m = new Musica(req.body);
+
+    m.save().then(() => {
         res.redirect('/');
     }, next);
 });
 
 router.get("/edit/:id", (req, res, next) => {
     const { id } = req.params;
-    db("musicas")
-        .where("id", id)
-        .first()
+    mongoose.model("Musica")
+        .findOne({ _id: id })
         .then((musica) => {
             if (!musica) {
                 return res.send(400);
@@ -61,9 +64,12 @@ router.get("/edit/:id", (req, res, next) => {
 
 router.put("/edit/:id", (req, res, next) => {
     const { id } = req.params;
-    db("musicas")
-        .where('id', id)
-        .update(req.body)
+    mongoose.model("Musica")
+        .update({ _id: id },
+            {
+                $set: req.body
+            }
+        )
         .then((result) => {
             if (result === 0) {
                 return res.send(400);
@@ -74,9 +80,8 @@ router.put("/edit/:id", (req, res, next) => {
 
 router.delete("/delete/:id", (req, res, next) => {
     const { id } = req.params;
-    db("musicas")
-        .where('id', id)
-        .delete()
+    mongoose.model("Musica")
+        .delete({ _id: id })
         .then((result) => {
             if (result === 0) {
                 return res.send(400);
