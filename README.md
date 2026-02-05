@@ -22,7 +22,10 @@
      4. [Iniciando um servidor Web](./primeiros-passos-nodejs/4-iniciando-servidor-web/)
      5. [Módulos CommonJS](./primeiros-passos-nodejs/5-modulos-commonjs/)
      6. [NPM](./primeiros-passos-nodejs/6-npm/)
-     7. ECMAScript 2015 - ES6
+     7. [ECMAScript 2015 - ES6](./primeiros-passos-nodejs/7-ecmascript-2015-es6/)
+     8. [Servidor Web com Express](./primeiros-passos-nodejs/8-servidor-express/)
+     9. [Motor de modelos Nunjucks](./primeiros-passos-nodejs/9-motor-nunjucks/)
+     10. [Aplicação com MySQL](./primeiros-passos-nodejs/10-aplicacao-mysql/)
  
     
 
