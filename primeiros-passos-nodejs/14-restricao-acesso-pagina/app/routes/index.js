@@ -2,40 +2,29 @@ var express = require('express');
 const passport = require('passport');
 var router = express.Router();
 
+const isAuth = require("../middlewares/authorize").isAuth;
+const isNotAuth = require("../middlewares/authorize").isNotAuth;
+
 /* GET home page. */
-router.get('/', (req, res) => {
-  if (req.isAuthenticated()) {
-    res.redirect('/home')
-  } else {
-    res.render('login');
-  }
+router.get('/', isAuth, (req, res) => {
+  res.render('home', {
+    session: req.session,
+    usuario: req.user
+  });
+});
+
+router.get('/login', isNotAuth, (_, res) => {
+  res.render('login');
 });
 
 router.post('/', passport.authenticate("local", {
-  successRedirect: "/home",
+  successRedirect: "/",
   failureRedirect: "/error"
 }));
-
-router.get('/home', (req, res) => {
-  if (!req.isAuthenticated()) {
-    res.redirect('/');
-  }
-
-  res.render('home', {
-    session: req.session,
-    usuario: req.user.username
-  });
-});
 
 router.get('/logout', (req, res, next) => {
   req.session.destroy();
   res.redirect('/')
-});
-
-router.get("/tabuada/:number", (req, res) => {
-  const result = parseInt(req.params.number) % 2 == 0
-    ? parseInt(req.params.number) : false;
-  res.render("tabuada", { result });
 });
 
 module.exports = router;
