@@ -27,6 +27,9 @@
      9. [Motor de modelos Nunjucks](./primeiros-passos-nodejs/9-motor-nunjucks/)
      10. [Aplicação com MySQL](./primeiros-passos-nodejs/10-aplicacao-mysql/)
      11. [Integração com MongoDB](./primeiros-passos-nodejs/11-integracao-mongodb/)
+     12. [Sessões](./primeiros-passos-nodejs/12-sessoes/)
+     13. [Autenticação com Passport](./primeiros-passos-nodejs/13-autenticacao-passport/)
+     14. [Restrição de acesso a páginas](./primeiros-passos-nodejs/14-restricao-acesso-pagina/)
  
     
 
